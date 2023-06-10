@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdio.h>
+
+int main() {
+    int T; 
+    scanf("%d", &T);
+    
+    while (T--) {
+        int costGreen, costPurple; 
+         scanf("%d %d", &costGreen, &costPurple);
+        int participants;
+        scanf("%d", &participants);
+        
+        int minCost1 = 0; 
+        int minCost2 = 0; 
+        
+        while (participants--) {
+            int solvedProblem1, solvedProblem2; 
+            scanf("%d %d", &solvedProblem1, &solvedProblem2);
+            
+            
+            if (solvedProblem1 == 1) {
+                minCost1 += costGreen;
+                minCost2 += costPurple;
+            }
+            
+            if (solvedProblem2 == 1) {
+                minCost1 += costPurple;
+                minCost2 += costGreen;
+            }
+        }
+        
+        int minCost = (minCost1 < minCost2) ? minCost1 : minCost2;
+        printf("%d\n", minCost);
+    }
+    
+    return 0;
+}
