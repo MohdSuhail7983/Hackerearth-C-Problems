@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+const long long MOD = 1000000007;
+
+int main() {
+    long long res = 1;
+    int n;
+    scanf("%d", &n);
+    while (n--) {
+        int x;
+        scanf("%d", &x);
+        res = (res * x) % MOD;
+    }
+    printf("%lld", res);
+    return 0;
+}
